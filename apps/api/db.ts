@@ -7,6 +7,7 @@ db.exec('PRAGMA journal_mode=WAL;PRAGMA foreign_keys=ON;PRAGMA busy_timeout=5000
 db.exec(fs.readFileSync(path.join(ROOT,'docs/v1.0/contracts/schema.sql'),'utf8').replaceAll('CREATE TABLE ','CREATE TABLE IF NOT EXISTS ').replaceAll('CREATE INDEX ','CREATE INDEX IF NOT EXISTS '));
 db.exec(`CREATE TABLE IF NOT EXISTS app_settings(key TEXT PRIMARY KEY,value TEXT NOT NULL);CREATE INDEX IF NOT EXISTS events_project ON project_events(project_id,seq);PRAGMA user_version=1;`);
 db.exec(`CREATE TABLE IF NOT EXISTS provider_calls(id TEXT PRIMARY KEY,job_id TEXT NOT NULL,stage TEXT NOT NULL,request_key TEXT NOT NULL UNIQUE,status TEXT NOT NULL,provider_request_id TEXT,provider_response_id TEXT,created_at TEXT NOT NULL);`);
+for(const name of ['provider','model'])if(!(db.prepare('PRAGMA table_info(provider_calls)').all() as any[]).some(c=>c.name===name))db.exec(`ALTER TABLE provider_calls ADD COLUMN ${name} TEXT`);
 export const all=(s:string,...p:any[])=>db.prepare(s).all(...p) as any[];
 export const one=(s:string,...p:any[])=>db.prepare(s).get(...p) as any;
 export const run=(s:string,...p:any[])=>db.prepare(s).run(...p);
