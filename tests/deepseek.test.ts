@@ -14,7 +14,7 @@ function respond(text:string){return new Response(JSON.stringify({id:'fixture-re
 
 test('DeepSeek story uses its own official endpoint, key and structured output',async t=>{
  const old=globalThis.fetch;t.after(()=>globalThis.fetch=old);const {id,jid}=newJob();let calls=0;
- globalThis.fetch=async(url:any,options:any)=>{calls++;assert.equal(url,'https://api.deepseek.com/responses');assert.equal(options.headers.Authorization,'Bearer '+process.env.DEEPSEEK_API_KEY);const b=JSON.parse(options.body);assert.equal(b.model,'deepseek-flash');assert.equal(b.input[0].role,'system');assert.equal(b.store,undefined);assert.equal(b.text.format.type,'json_schema');return respond(JSON.stringify({title:'测试',coreMessage:'事实',paragraphs:[{text:'来源正文',sourceSpanIds:['span1']}]}));};
+ globalThis.fetch=async(url:any,options:any)=>{calls++;assert.equal(url,'https://api.deepseek.com/responses');assert.equal(options.headers.Authorization,'Bearer '+process.env.DEEPSEEK_API_KEY);const b=JSON.parse(options.body);assert.equal(b.model,'deepseek-flash');assert.equal(b.input[0].role,'system');assert.equal(b.store,undefined);assert.deepEqual(b.reasoning,{effort:'none'});assert.equal(b.text.format.type,'json_schema');return respond(JSON.stringify({title:'测试',coreMessage:'事实',paragraphs:[{text:'来源正文',sourceSpanIds:['span1']}]}));};
  const result=await p.writeStory(id,jid,[{id:'span1',text:'来源正文'}],'','real');assert.equal(result.title,'测试');assert.equal(calls,1);
  const call=d.one('SELECT * FROM provider_calls WHERE job_id=?',jid);assert.equal(call.provider,'deepseek');assert.equal(call.model,'deepseek-flash');assert.equal(call.provider_response_id,'fixture-response');
 });
@@ -55,3 +55,17 @@ test('secret updates preserve both providers, never expose keys, and validate be
  fs.unlinkSync(process.env.SHISHI_SECRET_FILE!);
 });
 test('legacy settings still select OpenAI with no migration of existing keys',()=>{d.setSetting('connection',{textModel:'legacy'});assert.equal(p.connection().textProvider,'openai');assert.equal(p.connection().textModel,'legacy');});
+
+test('model IDs normalize surrounding whitespace on save and on legacy reads',()=>{
+ p.saveConnection({...config,deepseekModel:' deepseek-flash  ',textModel:' model ',imageModel:' image ',ttsModel:' voice '});
+ assert.equal(p.connection().textModel,'deepseek-flash');assert.equal(d.setting('connection').deepseekModel,'deepseek-flash');assert.equal(p.connection().imageModel,'image');
+ d.setSetting('connection',{...config,deepseekModel:'deepseek-flash '});assert.equal(p.connection().textModel,'deepseek-flash');
+ assert.throws(()=>p.saveConnection({...config,deepseekModel:'   '}),/不能为空/);
+ assert.throws(()=>p.saveConnection({...config,textModel:'   '}),/不能为空/);
+});
+
+test('truncated text is rejected and response usage remains available for reconciliation',async t=>{
+ const old=globalThis.fetch;t.after(()=>globalThis.fetch=old);const {id,jid}=newJob();globalThis.fetch=async()=>new Response(JSON.stringify({id:'partial-fixture',status:'incomplete',usage:{input_tokens:10,output_tokens:20},incomplete_details:{reason:'max_output_tokens'},output:[]}));
+ await assert.rejects(()=>p.paid(id,jid,'partial','text','responses',{model:'deepseek-flash'}),/输出被截断/);
+ assert.equal(d.totals(id).reservedMicros,0);const record=d.one('SELECT response_metadata_json FROM provider_calls WHERE job_id=?',jid);assert.equal(JSON.parse(record.response_metadata_json).status,'incomplete');
+});
