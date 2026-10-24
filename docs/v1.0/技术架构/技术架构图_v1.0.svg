@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="1610" viewBox="0 0 2200 1610">
+<title>拾史桌面端技术架构 v1.0</title>
+<desc>与 PRD F01 至 F42 同步的桌面端设计架构，模块化单体加 Worker。尚未实现正式应用。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6B8871"/></marker></defs>
+<rect width="2200" height="1610" fill="#F5F6F1"/>
+<text x="80" y="90" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="48" fill="#1B3F2E">拾史桌面端技术架构</text>
+<text x="1640" y="81" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" fill="#43684D">DESKTOP / v1.0</text>
+<text x="80" y="134" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="24" fill="#6D8069">设计基线  ·  PRD F01–F42  ·  默认偏好驱动  ·  故事与成片两次内容审阅</text>
+<rect x="80" y="170" width="2040" height="140" rx="15" fill="#EAF0E3" stroke="#D9E2D4" stroke-width="2"/>
+<text x="105" y="204" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" fill="#6B8060">用户看到的页面</text>
+<rect x="105" y="226" width="230" height="58" rx="9" fill="#FFFFFF" stroke="#D5E0CE" stroke-width="2"/>
+<text x="119" y="262" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#496B48">P01 我的作品</text>
+<rect x="355" y="226" width="230" height="58" rx="9" fill="#FFFFFF" stroke="#D5E0CE" stroke-width="2"/>
+<text x="369" y="262" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#496B48">P02 创作偏好</text>
+<rect x="605" y="226" width="230" height="58" rx="9" fill="#FFFFFF" stroke="#D5E0CE" stroke-width="2"/>
+<text x="619" y="262" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#496B48">P03 输入材料</text>
+<rect x="855" y="226" width="230" height="58" rx="9" fill="#2D5B40" stroke="#D5E0CE" stroke-width="2"/>
+<text x="869" y="262" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#FFFFFF">P04 确认故事</text>
+<rect x="1105" y="226" width="230" height="58" rx="9" fill="#FFFFFF" stroke="#D5E0CE" stroke-width="2"/>
+<text x="1119" y="262" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#496B48">P05 自动制作</text>
+<rect x="1355" y="226" width="230" height="58" rx="9" fill="#FFFFFF" stroke="#D5E0CE" stroke-width="2"/>
+<text x="1369" y="262" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#496B48">P06 分镜与素材</text>
+<rect x="1605" y="226" width="230" height="58" rx="9" fill="#2D5B40" stroke="#D5E0CE" stroke-width="2"/>
+<text x="1619" y="262" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#FFFFFF">P07 审阅成片</text>
+<rect x="1855" y="226" width="230" height="58" rx="9" fill="#FFFFFF" stroke="#D5E0CE" stroke-width="2"/>
+<text x="1869" y="262" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#496B48">P08 导出作品</text>
+<polyline points="1070,430 1130,430" fill="none" stroke="#6B8871" stroke-width="3" marker-end="url(#arrow)"><title>指令 / 状态</title></polyline>
+<polyline points="1620,505 1620,544 400,544 400,585" fill="none" stroke="#6B8871" stroke-width="3" marker-end="url(#arrow)"><title>审批与调度</title></polyline>
+<polyline points="720,660 780,660" fill="none" stroke="#6B8871" stroke-width="3" marker-end="url(#arrow)"><title>阶段任务</title></polyline>
+<polyline points="1420,660 1480,660" fill="none" stroke="#6B8871" stroke-width="3" marker-end="url(#arrow)"><title>受控工具</title></polyline>
+<polyline points="400,740 400,830" fill="none" stroke="#6B8871" stroke-width="3" marker-end="url(#arrow)"><title>版本依赖</title></polyline>
+<text x="415" y="789" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" fill="#78906C">版本依赖</text>
+<polyline points="1100,740 1100,830" fill="none" stroke="#6B8871" stroke-width="3" marker-end="url(#arrow)"><title>派发与检查</title></polyline>
+<text x="1115" y="789" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" fill="#78906C">派发与检查</text>
+<polyline points="1800,740 1800,830" fill="none" stroke="#6B8871" stroke-width="3" marker-end="url(#arrow)"><title>产物入库</title></polyline>
+<text x="1815" y="789" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" fill="#78906C">产物入库</text>
+<polyline points="400,985 400,1070" fill="none" stroke="#6B8871" stroke-width="3" marker-end="url(#arrow)"><title>旁白与分镜</title></polyline>
+<text x="415" y="1031" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" fill="#78906C">旁白与分镜</text>
+<polyline points="1800,985 1800,1070" fill="none" stroke="#6B8871" stroke-width="3" marker-end="url(#arrow)"><title>选定素材</title></polyline>
+<text x="1815" y="1031" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" fill="#78906C">选定素材</text>
+<polyline points="1070,1145 1130,1145" fill="none" stroke="#6B8871" stroke-width="3" marker-end="url(#arrow)"><title>预览 / 成片</title></polyline>
+<rect x="80" y="360" width="990" height="145" rx="15" fill="#FFFFFF" stroke="#D9E2D4" stroke-width="2"/>
+<text x="104" y="406" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" fill="#294E35">T01  桌面界面</text>
+<text x="105" y="447" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#6A7F60">React + TypeScript</text>
+<text x="105" y="481" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#6A7F60">偏好输入 · 故事确认 · 成片审阅</text>
+<rect x="1130" y="360" width="990" height="145" rx="15" fill="#FFFFFF" stroke="#D9E2D4" stroke-width="2"/>
+<text x="1154" y="406" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" fill="#294E35">T02  项目 API</text>
+<text x="1155" y="447" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#6A7F60">Node.js + TypeScript</text>
+<text x="1155" y="481" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#6A7F60">会话与权限 · 偏好快照 · 版本审批</text>
+<rect x="80" y="585" width="640" height="155" rx="15" fill="#EAF0E3" stroke="#D9E2D4" stroke-width="2"/>
+<text x="104" y="631" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" fill="#294E35">T03  工作流编排</text>
+<text x="105" y="672" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#6A7F60">阶段状态机 · 依赖与变更影响</text>
+<text x="105" y="706" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#6A7F60">暂停 / 恢复 · 局部重做 · 替代路径</text>
+<rect x="780" y="585" width="640" height="155" rx="15" fill="#EAF0E3" stroke="#D9E2D4" stroke-width="2"/>
+<text x="804" y="631" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" fill="#294E35">T04  Agent 与 Skill</text>
+<text x="805" y="672" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#6A7F60">一个主编排器 + 多阶段 Skill</text>
+<text x="805" y="706" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#6A7F60">资料 → 剧本 → 分镜 → 视觉 → 质检</text>
+<rect x="1480" y="585" width="640" height="155" rx="15" fill="#EAF0E3" stroke="#D9E2D4" stroke-width="2"/>
+<text x="1504" y="631" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" fill="#294E35">T05  能力网关</text>
+<text x="1505" y="672" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#6A7F60">GPT 文字 / 图片工具默认接入</text>
+<text x="1505" y="706" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#6A7F60">OCR · TTS · 视频可选适配器</text>
+<rect x="80" y="830" width="640" height="155" rx="15" fill="#FFFFFF" stroke="#D9E2D4" stroke-width="2"/>
+<text x="104" y="876" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" fill="#294E35">T06  来源与内容版本</text>
+<text x="105" y="917" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#6A7F60">原书页 · OCR · 事实与引用</text>
+<text x="105" y="951" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#6A7F60">偏好 / 剧本 / 分镜的不可变历史</text>
+<rect x="780" y="830" width="640" height="155" rx="15" fill="#FFFFFF" stroke="#D9E2D4" stroke-width="2"/>
+<text x="804" y="876" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" fill="#294E35">T07  任务与预算账本</text>
+<text x="805" y="917" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#6A7F60">持久 Job · 幂等 · 租约 · 状态核实</text>
+<text x="805" y="951" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#6A7F60">费用预留 · 上限检查 · 不盲目重试</text>
+<rect x="1480" y="830" width="640" height="155" rx="15" fill="#FFFFFF" stroke="#D9E2D4" stroke-width="2"/>
+<text x="1504" y="876" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" fill="#294E35">T08  素材与文件存储</text>
+<text x="1505" y="917" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#6A7F60">原图 / 候选 / 选定图 / 音频 / 视频</text>
+<text x="1505" y="951" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#6A7F60">受控访问 · 外部导入 · 内容校验</text>
+<rect x="80" y="1070" width="990" height="155" rx="15" fill="#EEF0E6" stroke="#D9E2D4" stroke-width="2"/>
+<text x="104" y="1116" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" fill="#294E35">T09  时间线与渲染</text>
+<text x="105" y="1157" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#6A7F60">实际配音时码 → 镜头 / 字幕 / 混音</text>
+<text x="105" y="1191" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#6A7F60">Timeline JSON + FFmpeg · 图片运动优先</text>
+<rect x="1130" y="1070" width="990" height="155" rx="15" fill="#EEF0E6" stroke="#D9E2D4" stroke-width="2"/>
+<text x="1154" y="1116" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="31" fill="#294E35">T10  修改计划与交付</text>
+<text x="1155" y="1157" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#6A7F60">自然语言反馈 → 影响分析 → 复用资产</text>
+<text x="1155" y="1191" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#6A7F60">MP4 · SRT · 封面 · 文案 · 来源与项目记录</text>
+<text x="1330" y="1269" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" fill="#8C865B">工具调用统一经过 T07 的费用与幂等检查</text>
+<rect x="80" y="1295" width="2040" height="185" rx="15" fill="#203E2D" stroke="#203E2D" stroke-width="2"/>
+<text x="105" y="1336" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="26" fill="#E2EBD6">部署与外部能力边界</text>
+<text x="110" y="1386" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="24" fill="#E4EBD8">单机持久化</text>
+<text x="110" y="1428" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" fill="#B3C7A7">SQLite + Job 表 + 受控文件目录</text>
+<text x="610" y="1386" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="24" fill="#E4EBD8">OpenAI 默认能力</text>
+<text x="610" y="1428" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" fill="#B3C7A7">GPT 编排 / 结构化输出 / 图片工具</text>
+<text x="1110" y="1386" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="24" fill="#E4EBD8">声音与视频</text>
+<text x="1110" y="1428" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" fill="#B3C7A7">TTS 需验证 · 视频接口条件启用</text>
+<text x="1610" y="1386" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="24" fill="#E4EBD8">本地合成</text>
+<text x="1610" y="1428" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="19" fill="#B3C7A7">时间线 JSON → FFmpeg → 交付包</text>
+<text x="80" y="1533" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="23" fill="#647B59">模块表示职责，不等于十个独立服务。浏览器离页可继续；主机服务停止需重启后恢复。</text>
+<text x="80" y="1574" font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="21" fill="#819071">图源 architecture.json  /  模型 ID 与依赖版本在接入时锁定  /  当前为设计，未执行付费任务</text>
+</svg>

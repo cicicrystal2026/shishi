@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "sources": {
+    "原型/index.html": "463f93d6311da465147ac7b5fd3a12de6b248b31a078902b318a49b6d073d82c",
+    "原型/style.css": "a9dc29dc90b0cb82e8a339efde3834da65f7836a553c41df28bacbb6926a74c1",
+    "原型/prototype.js": "d7c19344cf4f1860258a545f15a5ada01408f6a0deab9b2c84bd839dbea80e8b",
+    "tools/render_prototype.cjs": "1da3476288ae2f94cb67bb952e28d1d7fbd5aa095da4fb5461c809bc389cc82e"
+  },
+  "outputs": {
+    "原型图/01-我的作品.png": "36d65d3310f88af78a800f532bfcd1f2e156e0ebdb7a7cb0a7b9b0233a3c8824",
+    "原型图/02-创作偏好.png": "6d292225f9827adf368f1f84c0182c5c20ced44847f1e670567d799c8003d797",
+    "原型图/03-输入材料.png": "21a9ab58527102318e87f8e114518be171910617c052cd1011f8031a75271890",
+    "原型图/04-确认故事.png": "9116fc74f03fdeb73e8dd37c3215ac620050675bf40aca45a7dd367e4b0c83ba",
+    "原型图/05-自动制作.png": "b35925dd2bd72105f4e8f4114c01e8b3d2b353da5d3bf30077b0aa075f8a5796",
+    "原型图/06-分镜与素材.png": "af0481c15d18ecf9c3e6490fd4f3d2592f5a85a593001440b74b436fe3914e2f",
+    "原型图/07-审阅成片.png": "6f82eacb76698b77a1425c84b54f62c5d0b769c904b780f6e108cd80e7f1f4d4",
+    "原型图/08-导出作品.png": "d76685dad4d6cd96682c12bfa4c7b80d32382116198fc7ca9a04081574f04874",
+    "原型图/09-预算暂停状态.png": "32574099c4530f8fefe0319caa6ef49d91d58c9b1b3f35b09d3d8db91fa40bdf",
+    "原型图/10-来源与疑点状态.png": "0df5d9e8991b4db72e4c1c9c7fad43adca7428daf6e4640443d4fa52c2562cb8"
+  }
+}

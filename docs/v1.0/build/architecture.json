@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "sources": {
+    "技术架构/architecture.json": "e584f75fd697e2279d3a5a5b474c092df1a99924f7800c91886ea799c193a83d",
+    "tools/render_architecture.py": "bb7a37ec28569036ec64e0f5569f2171efbc915dd87bdbd8629d823a970df150"
+  },
+  "outputs": {
+    "技术架构/技术架构图_v1.0.svg": "d1d8948e8ea8905ec5b29036f0913b096b87f486bfd799c70c15bc7084be3147",
+    "技术架构/技术架构图_v1.0.png": "e6e43ce4f651a1d51c97b3767da3d7a22317898fee17f1abdc199d8222c033eb",
+    "技术架构/技术架构图_v1.0.mmd": "2f0046d37d4158bc2fc46a6433303a2bb665fbc0a762b5f2a4c3e7d726fb9700"
+  }
+}

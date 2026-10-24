@@ -1,0 +1,89 @@
+{
+  "version": "1.0",
+  "baseline": "shishi-desktop-v1.0",
+  "stage": "design_baseline",
+  "implementation_status": "not_implemented",
+  "files": {
+    ".gitignore": "885f0f3a4358a401b4bae14cbb4dff910c7db41c76915b90430b3dcc52f3a371",
+    "AGENTS.md": "6e4e35996bbd0d802a34ea47400e05366cc60e0bda2412052166ad1bc7e51b9d",
+    "CHANGELOG.md": "f0e9712c243c83aab3638f80ddeaa8ede3a761f8f19a458ed418ded44476b08b",
+    "VERSION": "5717e7c840171019a4eeab5b79a7f894a4986eaff93d04ec5b12c9a189f594bf",
+    "build/architecture.json": "a95c7c65893e4bba6259ece2acb74e70fd9b113ccbb6471f45c7d176efaef927",
+    "build/contracts.json": "805af64171d42409993037050112c5baadc4fc4639d9240d25c08b427b951519",
+    "build/offline.json": "6b7342dba72d90168693668956db7cd60faf5eab9dd302850a2e5c59e100f950",
+    "build/overview.json": "9450bb7d11652ec6d84fd0248a9de8a9fb5980ebb11fc18f36eb5c9b384b3efb",
+    "build/prd.json": "bef0489ef4c9149f3b08e6f4fd144d248d66a4b7f31d075bd492fd6984ef019d",
+    "build/prototype.json": "a7ac93e474e4d1be1975e88ff78365b30f4e6727686b13b2d45aa427845714fe",
+    "build/technical-spec.json": "2c2548147b5e9398b7471206a42f103144637df8cfc30ef6171b1321960bb19b",
+    "contracts/core.schema.json": "ac571c82d34d1ebf10a32734c02f9681a22296fe6407f2fb5ecf2bf4b1ee2aab",
+    "contracts/openapi.json": "a1eb3e4c4d5c51cd28e4328e67a990fa80362027ef592fb67d70110b3a518662",
+    "contracts/schema.sql": "f30fe8648f6ac293d925d10ee687697216a64201b29e53f80415b90c28554f51",
+    "tests/requirements.txt": "756cc9e506ae4ee1a6f6c0507088b5cfc0dc8ba350fb2d2d46f1ffa72033adb6",
+    "tests/test_design_contracts.py": "fb016eee4b2436beaf5337c3cc587798f3552f02e1bbb72b1a0441d76deef1ae",
+    "tests/test_sync_guard.py": "035dee07df0834b6487b707d6f961e73ae408ae71e0685d1b4268981fc73b033",
+    "tools/baseline.py": "44c752196e13ec3c7d3075b56c7b018dd24959660ae4c2338764215638bfe0ab",
+    "tools/build_contracts.py": "a6b0c7ba8af3924613b9d2955a677be596254b09f93e8203d4aa55af9a8df62d",
+    "tools/build_delivery_assets.py": "59a4a801282b9f619b7b875d5e5e6eefe97f22b20b3e51ba4b1b57bf2b1f020d",
+    "tools/build_prd.py": "977b8cd4cf14ef78a93d2fa546882de23796c47e2c4a2f5fc9640bec2f0d4b16",
+    "tools/build_technical_spec.py": "8d9f820aeee43538733ae8009fd20bc56d24b02da5239d07b648c90f6854d333",
+    "tools/check_sync.py": "55192984ff6a66e9033c09d3685267676e535ef4a2c8d3c21e692bc814b41da3",
+    "tools/render_architecture.py": "bb7a37ec28569036ec64e0f5569f2171efbc915dd87bdbd8629d823a970df150",
+    "tools/render_prototype.cjs": "1da3476288ae2f94cb67bb952e28d1d7fbd5aa095da4fb5461c809bc389cc82e",
+    "原型/index.html": "463f93d6311da465147ac7b5fd3a12de6b248b31a078902b318a49b6d073d82c",
+    "原型/prototype.js": "d7c19344cf4f1860258a545f15a5ada01408f6a0deab9b2c84bd839dbea80e8b",
+    "原型/style.css": "a9dc29dc90b0cb82e8a339efde3834da65f7836a553c41df28bacbb6926a74c1",
+    "原型/verification.json": "c243b34a25f016226e5ab469ec9effc6a01e20690accd8ac44efcc42fe640470",
+    "原型图/01-我的作品.png": "36d65d3310f88af78a800f532bfcd1f2e156e0ebdb7a7cb0a7b9b0233a3c8824",
+    "原型图/02-创作偏好.png": "6d292225f9827adf368f1f84c0182c5c20ced44847f1e670567d799c8003d797",
+    "原型图/03-输入材料.png": "21a9ab58527102318e87f8e114518be171910617c052cd1011f8031a75271890",
+    "原型图/04-确认故事.png": "9116fc74f03fdeb73e8dd37c3215ac620050675bf40aca45a7dd367e4b0c83ba",
+    "原型图/05-自动制作.png": "b35925dd2bd72105f4e8f4114c01e8b3d2b353da5d3bf30077b0aa075f8a5796",
+    "原型图/06-分镜与素材.png": "af0481c15d18ecf9c3e6490fd4f3d2592f5a85a593001440b74b436fe3914e2f",
+    "原型图/07-审阅成片.png": "6f82eacb76698b77a1425c84b54f62c5d0b769c904b780f6e108cd80e7f1f4d4",
+    "原型图/08-导出作品.png": "d76685dad4d6cd96682c12bfa4c7b80d32382116198fc7ca9a04081574f04874",
+    "原型图/09-预算暂停状态.png": "32574099c4530f8fefe0319caa6ef49d91d58c9b1b3f35b09d3d8db91fa40bdf",
+    "原型图/10-来源与疑点状态.png": "0df5d9e8991b4db72e4c1c9c7fad43adca7428daf6e4640443d4fa52c2562cb8",
+    "技术架构/architecture.json": "e584f75fd697e2279d3a5a5b474c092df1a99924f7800c91886ea799c193a83d",
+    "技术架构/diagram_build.json": "9943c44b59e58c291fab116d3841dfd6aaf3f704b53802cb5bbaa69e23cb0f05",
+    "技术架构/工作流与异常处理.mmd": "956909de83ba8af33cd857a2d58a6d6cc66932634902788d462aa64d15bfd7d1",
+    "技术架构/技术架构图_v1.0.mmd": "2f0046d37d4158bc2fc46a6433303a2bb665fbc0a762b5f2a4c3e7d726fb9700",
+    "技术架构/技术架构图_v1.0.png": "e6e43ce4f651a1d51c97b3767da3d7a22317898fee17f1abdc199d8222c033eb",
+    "技术架构/技术架构图_v1.0.svg": "d1d8948e8ea8905ec5b29036f0913b096b87f486bfd799c70c15bc7084be3147",
+    "技术架构/技术架构说明.md": "8e5ff1466e8194124346b2c2178e3d8bfd5cf6244b80e5144b6d53f832eee797",
+    "拾史桌面端V1_PRD.docx": "3faa802ea92ae21b7c87344cf82c8d7fd7e1130edc6c1b9b0db228c9989204f4",
+    "拾史桌面端V1_PRD.md": "e40f04b36ae02c57cc23231b607c40f1004de247afa6d5b6c5287f35c19e1742",
+    "拾史桌面端V1_交互原型.html": "a3a0388d3c439cf42261dbb3bfe8e16a0793bfecdbe4d691d30e521a2986b72a",
+    "拾史桌面端v1.0技术规格说明书.docx": "45d05eae52d1a904cc89f79558cd4ec724e0aa54043a8fc75de05399c7c8deb3",
+    "拾史桌面端v1.0技术规格说明书.md": "32480841b89b41c36c1ff4c2f9a37c89f58b5c614a28f9c1a8c1b772160ece1e",
+    "版本管理.md": "0fc39fe637151a5b66afaa070baad8efc9bed176a2a0569a48b11348a0e76b98",
+    "迭代记录.md": "079ba8726e194a6c079a0d371bbb020e3f9471561268df186b2a43c847103d93",
+    "阅读说明.md": "426f9c04adfd8a7f3e5d8f04fcf591ed87f38e9b1dcbf298a8cebbe7480f2583",
+    "需求追踪.json": "474ff198f641fde7a25efbe672310033c2c14bb231edb111541c3ccb668ddbe4",
+    "页面总览.png": "b8e914d934fe503abaeb345d57fb566e2aec55403c48e9592a05773546b0d1ca",
+    "验证记录.md": "10b21e63f06fe2eb60222f1bc05da04afd63f3a3b77635b6c6735a114064ed8c"
+  },
+  "derived": {
+    "拾史桌面端V1_PRD.docx": [
+      "拾史桌面端V1_PRD.md",
+      "tools/build_prd.py"
+    ],
+    "技术架构/技术架构图_v1.0.png": [
+      "技术架构/architecture.json",
+      "tools/render_architecture.py"
+    ],
+    "技术架构/技术架构图_v1.0.svg": [
+      "技术架构/architecture.json",
+      "tools/render_architecture.py"
+    ],
+    "拾史桌面端V1_交互原型.html": [
+      "原型/index.html",
+      "原型/style.css",
+      "原型/prototype.js"
+    ],
+    "原型图": [
+      "原型/index.html",
+      "原型/style.css",
+      "原型/prototype.js"
+    ]
+  }
+}

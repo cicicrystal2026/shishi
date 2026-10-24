@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "sources": {
+    "原型/index.html": "463f93d6311da465147ac7b5fd3a12de6b248b31a078902b318a49b6d073d82c",
+    "原型/style.css": "a9dc29dc90b0cb82e8a339efde3834da65f7836a553c41df28bacbb6926a74c1",
+    "原型/prototype.js": "d7c19344cf4f1860258a545f15a5ada01408f6a0deab9b2c84bd839dbea80e8b",
+    "tools/build_delivery_assets.py": "59a4a801282b9f619b7b875d5e5e6eefe97f22b20b3e51ba4b1b57bf2b1f020d"
+  },
+  "outputs": {
+    "拾史桌面端V1_交互原型.html": "a3a0388d3c439cf42261dbb3bfe8e16a0793bfecdbe4d691d30e521a2986b72a"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "viewport": "1440 × 1050",
+  "routes": [
+    {
+      "route": "home",
+      "width": 1440,
+      "height": 1050,
+      "viewport": 1440,
+      "heading": "把书页里的线索，变成值得看的故事"
+    },
+    {
+      "route": "preferences",
+      "width": 1440,
+      "height": 1082,
+      "viewport": 1440,
+      "heading": "定义你的创作习惯"
+    },
+    {
+      "route": "input",
+      "width": 1440,
+      "height": 1194,
+      "viewport": 1440,
+      "heading": "这次，想讲一个什么故事？"
+    },
+    {
+      "route": "story",
+      "width": 1440,
+      "height": 1127,
+      "viewport": 1440,
+      "heading": "先确认，这是不是你想讲的故事"
+    },
+    {
+      "route": "production",
+      "width": 1440,
+      "height": 1050,
+      "viewport": 1440,
+      "heading": "故事正在成为画面"
+    },
+    {
+      "route": "storyboard",
+      "width": 1440,
+      "height": 1196,
+      "viewport": 1440,
+      "heading": "分镜与素材"
+    },
+    {
+      "route": "review",
+      "width": 1440,
+      "height": 1104,
+      "viewport": 1440,
+      "heading": "看一遍，然后告诉我怎么改"
+    },
+    {
+      "route": "export",
+      "width": 1440,
+      "height": 1050,
+      "viewport": 1440,
+      "heading": "把这一条，变成下一条的起点"
+    }
+  ],
+  "interactionChecks": [
+    "new project flow",
+    "story approval",
+    "asset tabs",
+    "shot detail",
+    "feedback mapping",
+    "preferences persistence",
+    "1280 and 1920 width"
+  ],
+  "runtimeErrors": []
+}

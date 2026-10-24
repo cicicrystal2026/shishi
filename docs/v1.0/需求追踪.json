@@ -1,0 +1,917 @@
+{
+  "version": "1.0",
+  "requirements": [
+    {
+      "id": "F01",
+      "text": "已保存项目刷新后仍可继续；任务是否在运行以服务端记录为准。",
+      "text_sha256": "bba164777ba7687e6d02e901c617b23f6ba6cf4838976492cb5f2ab91f405172",
+      "pages": [
+        "P01"
+      ],
+      "modules": [
+        "T01",
+        "T02",
+        "T07",
+        "T08"
+      ],
+      "prd_section": "7.1",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F01"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F02",
+      "text": "新建只创建一个草稿，重复点击不重复创建。",
+      "text_sha256": "2a8e13ad5925854c6164f906030512611d3584dd5a0b71708ebd86e191c541ef",
+      "pages": [
+        "P01"
+      ],
+      "modules": [
+        "T01",
+        "T02",
+        "T07",
+        "T08"
+      ],
+      "prd_section": "7.1",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F02"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F03",
+      "text": "列表无项目时不展示虚构经营数据。",
+      "text_sha256": "61c4f7627c8ef8ff2ddc7d082100d964d056457d435636e4fc22b029a23d7430",
+      "pages": [
+        "P01"
+      ],
+      "modules": [
+        "T01",
+        "T02",
+        "T07",
+        "T08"
+      ],
+      "prd_section": "7.1",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F03"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F04",
+      "text": "删除先显示范围和影响；运行任务先处理状态，资产采用可恢复删除策略，最终清理由后台执行。",
+      "text_sha256": "591ebb576121a949bf1b0dc991a733fdef2230ef3d74cea210c97fc26fdd33fb",
+      "pages": [
+        "P01"
+      ],
+      "modules": [
+        "T01",
+        "T02",
+        "T07",
+        "T08"
+      ],
+      "prd_section": "7.1",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F04"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F05",
+      "text": "保存偏好创建版本，显示保存成功且能重新载入。",
+      "text_sha256": "12c7521f9c8db7b95aa44621784e9b41e76abf08516ead6cad1b110a11fe61ef",
+      "pages": [
+        "P02",
+        "S01"
+      ],
+      "modules": [
+        "T01",
+        "T02",
+        "T06",
+        "T07"
+      ],
+      "prd_section": "7.2",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F05"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F06",
+      "text": "本条覆盖不写回长期默认。",
+      "text_sha256": "06b146566ee514da192ae8e2f0da404a2d4a05a12df52a74390f51e036c63848",
+      "pages": [
+        "P02",
+        "S01"
+      ],
+      "modules": [
+        "T01",
+        "T02",
+        "T06",
+        "T07"
+      ],
+      "prd_section": "7.2",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F06"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F07",
+      "text": "预算空或为 0，不提交新增付费生成。",
+      "text_sha256": "78a3129129e362147387b1255919ea6b8a5e985abd63c8644663c93234bb194e",
+      "pages": [
+        "P02",
+        "S01"
+      ],
+      "modules": [
+        "T01",
+        "T02",
+        "T06",
+        "T07"
+      ],
+      "prd_section": "7.2",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F07"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F08",
+      "text": "改变视觉风格后预览提示应对应真实模板能力，不承诺所有风格表现相同。",
+      "text_sha256": "8095689d09a7e341eba71c080dd1ca5389fce4d63dd5cfec88c30902292a999f",
+      "pages": [
+        "P02",
+        "S01"
+      ],
+      "modules": [
+        "T01",
+        "T02",
+        "T06",
+        "T07"
+      ],
+      "prd_section": "7.2",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F08"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F09",
+      "text": "关闭故事确认须明确说明后续行为，并受费用与事实门槛约束。",
+      "text_sha256": "ef737fa65e88e82f768f5ed4296649597bb3a7dc9eec3e0a7d59bc4b1b53507b",
+      "pages": [
+        "P02",
+        "S01"
+      ],
+      "modules": [
+        "T01",
+        "T02",
+        "T06",
+        "T07"
+      ],
+      "prd_section": "7.2",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F09"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F10",
+      "text": "不支持的格式、损坏文件、空文件及受保护 PDF 显示具体原因。",
+      "text_sha256": "6b2d277a223141099a9a817dd969f2e29fa8fffc41194d939c0005870c091ba2",
+      "pages": [
+        "P03",
+        "S02"
+      ],
+      "modules": [
+        "T01",
+        "T02",
+        "T05",
+        "T06",
+        "T08"
+      ],
+      "prd_section": "7.3",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F10"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F11",
+      "text": "无材料且无正文时不能发起故事生成。",
+      "text_sha256": "f1bedf1614ec5ebc5999523efbbd023431d1cbf74899734ed3f6e490d5992e1e",
+      "pages": [
+        "P03",
+        "S02"
+      ],
+      "modules": [
+        "T01",
+        "T02",
+        "T05",
+        "T06",
+        "T08"
+      ],
+      "prd_section": "7.3",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F11"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F12",
+      "text": "导入与识读任务分开记录，上传失败不会显示已识读。",
+      "text_sha256": "ff26fa189502009a83cbc705f002a305bafbd428485f6bba9cf2c7d31d8acb68",
+      "pages": [
+        "P03",
+        "S02"
+      ],
+      "modules": [
+        "T01",
+        "T02",
+        "T05",
+        "T06",
+        "T08"
+      ],
+      "prd_section": "7.3",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F12"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F13",
+      "text": "重复导入以内容哈希提示合并，允许用户保留不同页版本。",
+      "text_sha256": "8b04959f4879fc6e3590552ec6edf453d6985c5e81ff2ac6c7a6d5566b4bc39e",
+      "pages": [
+        "P03",
+        "S02"
+      ],
+      "modules": [
+        "T01",
+        "T02",
+        "T05",
+        "T06",
+        "T08"
+      ],
+      "prd_section": "7.3",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F13"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F14",
+      "text": "本次想法可留空，系统仍能提出一个故事方案。",
+      "text_sha256": "ba161a0b039bb4958a915455ae415c790f280498480a6f59175043753d4b6661",
+      "pages": [
+        "P03",
+        "S02"
+      ],
+      "modules": [
+        "T01",
+        "T02",
+        "T05",
+        "T06",
+        "T08"
+      ],
+      "prd_section": "7.3",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F14"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F15",
+      "text": "疑点定位到具体原页和正文片段。",
+      "text_sha256": "5c67a6305186dcd28a200a7d81573e21347880320397f6464d3a36785dd461c0",
+      "pages": [
+        "P03",
+        "S02"
+      ],
+      "modules": [
+        "T01",
+        "T02",
+        "T05",
+        "T06",
+        "T08"
+      ],
+      "prd_section": "7.3",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F15"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F16",
+      "text": "剧本不能引用不存在的 SourceSpan ID。",
+      "text_sha256": "8513233bb371dcae9be1c924a7e84537cef286c14877d784758ee77e347a1236",
+      "pages": [
+        "P04",
+        "S02"
+      ],
+      "modules": [
+        "T02",
+        "T03",
+        "T04",
+        "T06",
+        "T07"
+      ],
+      "prd_section": "7.4",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F16"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F17",
+      "text": "资料不足时给出需要补充的最小信息，不能补造故事背景。",
+      "text_sha256": "ce1f06ec6eb9b41bd22e1013bb0075160868aa6ac43d358f203569621ae65d55",
+      "pages": [
+        "P04",
+        "S02"
+      ],
+      "modules": [
+        "T02",
+        "T03",
+        "T04",
+        "T06",
+        "T07"
+      ],
+      "prd_section": "7.4",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F17"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F18",
+      "text": "确认绑定版本与输入快照；连点只创建一次制作批次。",
+      "text_sha256": "c693575e29ebf7fd7c592e42f09186ca6f6b0df1fd83dbf37c751e0d4a3a1331",
+      "pages": [
+        "P04",
+        "S02"
+      ],
+      "modules": [
+        "T02",
+        "T03",
+        "T04",
+        "T06",
+        "T07"
+      ],
+      "prd_section": "7.4",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F18"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F19",
+      "text": "人工修改在退出和刷新后保留。",
+      "text_sha256": "750ed9a9e923765328bc5a2b28cbcf853f6d683a0bdc427f915f0d2863320ced",
+      "pages": [
+        "P04",
+        "S02"
+      ],
+      "modules": [
+        "T02",
+        "T03",
+        "T04",
+        "T06",
+        "T07"
+      ],
+      "prd_section": "7.4",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F19"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F20",
+      "text": "系统提供基于来源的吸引力表达，不生成无依据的爆款评分。",
+      "text_sha256": "92def7b3d96651cbbdcdef133c01d5946382c457a0b43e0524b1f9ddadc4bf7d",
+      "pages": [
+        "P04",
+        "S02"
+      ],
+      "modules": [
+        "T02",
+        "T03",
+        "T04",
+        "T06",
+        "T07"
+      ],
+      "prd_section": "7.4",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F20"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F21",
+      "text": "刷新与断网恢复后显示同一服务商任务 ID。",
+      "text_sha256": "54abd8649e34e03b3ebd8ec26b92bfa9553b23a1a8509cf59853796df6a30267",
+      "pages": [
+        "P05",
+        "S01"
+      ],
+      "modules": [
+        "T01",
+        "T03",
+        "T05",
+        "T07",
+        "T09"
+      ],
+      "prd_section": "7.5",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F21"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F22",
+      "text": "默认不自动重试已产生费用的任务；安全的非付费修复最多两次作为初始配置。",
+      "text_sha256": "e919fd5b39a9d89af78c4a733b4f73a5f918f282ad405d4528da6e7671ae3790",
+      "pages": [
+        "P05",
+        "S01"
+      ],
+      "modules": [
+        "T01",
+        "T03",
+        "T05",
+        "T07",
+        "T09"
+      ],
+      "prd_section": "7.5",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F22"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F23",
+      "text": "预算不足在派发前阻止。",
+      "text_sha256": "0be08f3b22773b95e0f7c96c27436724e2ac703fa7c641406808d6a3e7050184",
+      "pages": [
+        "P05",
+        "S01"
+      ],
+      "modules": [
+        "T01",
+        "T03",
+        "T05",
+        "T07",
+        "T09"
+      ],
+      "prd_section": "7.5",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F23"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F24",
+      "text": "暂停后未派发任务不再提交，已提交任务继续核实。",
+      "text_sha256": "710b75c967b583380fb71b3f8bea098421eadef86f8eaa61ab4a299e78fb6351",
+      "pages": [
+        "P05",
+        "S01"
+      ],
+      "modules": [
+        "T01",
+        "T03",
+        "T05",
+        "T07",
+        "T09"
+      ],
+      "prd_section": "7.5",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F24"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F25",
+      "text": "完成后进入可播放预览，尚未完成时不能显示真实导出可用。",
+      "text_sha256": "a50e92ce1d19976e23dc24880e734767e8dbefb6736c71cfcf8a689432982dd0",
+      "pages": [
+        "P05",
+        "S01"
+      ],
+      "modules": [
+        "T01",
+        "T03",
+        "T05",
+        "T07",
+        "T09"
+      ],
+      "prd_section": "7.5",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F25"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F26",
+      "text": "视频能力不可用时可提示使用静态图片运动方案，不擅自改变用户确认的关键内容。",
+      "text_sha256": "1daba4ce076cc62faa284f7b8524f58c70c3349b56af4262d6c71a2b0c102a12",
+      "pages": [
+        "P05",
+        "S01"
+      ],
+      "modules": [
+        "T01",
+        "T03",
+        "T05",
+        "T07",
+        "T09"
+      ],
+      "prd_section": "7.5",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F26"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F27",
+      "text": "替换一个镜头不会删除其他镜头和旧版本。",
+      "text_sha256": "d469cd4565bf73790e42ad123a6ee55c64db288248dc0fd2adc16d7ff6f50dcc",
+      "pages": [
+        "P06"
+      ],
+      "modules": [
+        "T01",
+        "T03",
+        "T04",
+        "T06",
+        "T07",
+        "T08",
+        "T09"
+      ],
+      "prd_section": "7.6",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F27"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F28",
+      "text": "事实/参考变化标记所有相关资产待复核。",
+      "text_sha256": "cb49fd1843c53fec245340962d88cfe4281fe5413adb4104aaa99748d124394d",
+      "pages": [
+        "P06"
+      ],
+      "modules": [
+        "T01",
+        "T03",
+        "T04",
+        "T06",
+        "T07",
+        "T08",
+        "T09"
+      ],
+      "prd_section": "7.6",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F28"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F29",
+      "text": "提示词编辑本身不提交付费任务。",
+      "text_sha256": "8294532157cc9ef01fae56c8c466135828758ef2236fa1c88d6d90b5c5eb9182",
+      "pages": [
+        "P06"
+      ],
+      "modules": [
+        "T01",
+        "T03",
+        "T04",
+        "T06",
+        "T07",
+        "T08",
+        "T09"
+      ],
+      "prd_section": "7.6",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F29"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F30",
+      "text": "新增生成先检查剩余预算和版本一致性。",
+      "text_sha256": "fa113abbd7282db1ed3e1f5370706ba3511dddef2e357c3b26c0f2f77387bce5",
+      "pages": [
+        "P06"
+      ],
+      "modules": [
+        "T01",
+        "T03",
+        "T04",
+        "T06",
+        "T07",
+        "T08",
+        "T09"
+      ],
+      "prd_section": "7.6",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F30"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F31",
+      "text": "镜头时长或声音改变时，重新检查时间线，而不是只改可见卡片。",
+      "text_sha256": "b9612c73c4fc96db580a1733acad285bfd76d70fefa53a3eaf4100e76447323b",
+      "pages": [
+        "P06"
+      ],
+      "modules": [
+        "T01",
+        "T03",
+        "T04",
+        "T06",
+        "T07",
+        "T08",
+        "T09"
+      ],
+      "prd_section": "7.6",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F31"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F32",
+      "text": "反馈进入版本记录，不会只显示聊天消息。",
+      "text_sha256": "550a5e3a385e023672af71912803cce1e41edd5593119150676b10c4f3594bb1",
+      "pages": [
+        "P07"
+      ],
+      "modules": [
+        "T01",
+        "T03",
+        "T06",
+        "T07",
+        "T09",
+        "T10"
+      ],
+      "prd_section": "7.7",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F32"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F33",
+      "text": "字幕变大只更新字幕布局与渲染。",
+      "text_sha256": "8c63f2df4f232c21a608b7067e3396e5bb1e9b3fea93e941a951bb439de9ea38",
+      "pages": [
+        "P07"
+      ],
+      "modules": [
+        "T01",
+        "T03",
+        "T06",
+        "T07",
+        "T09",
+        "T10"
+      ],
+      "prd_section": "7.7",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F33"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F34",
+      "text": "音乐变轻只调整音轨混合与渲染。",
+      "text_sha256": "691c2fce6c689d5b0496b9617fe11cdc02be479454c18459e0a243f7a158898b",
+      "pages": [
+        "P07"
+      ],
+      "modules": [
+        "T01",
+        "T03",
+        "T06",
+        "T07",
+        "T09",
+        "T10"
+      ],
+      "prd_section": "7.7",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F34"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F35",
+      "text": "更换镜头分析对应片段与时间线影响。",
+      "text_sha256": "5b2e4ab8e19486121fa25038f7ce829eceec1349b34859346e54aabcf3752e3b",
+      "pages": [
+        "P07"
+      ],
+      "modules": [
+        "T01",
+        "T03",
+        "T06",
+        "T07",
+        "T09",
+        "T10"
+      ],
+      "prd_section": "7.7",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F35"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F36",
+      "text": "已批准成片后再修改产生新版本，旧导出保持可识别。",
+      "text_sha256": "9bb1427bbc5a6200270edab220c878ab8c5750f0d81033bab6def1d3895454df",
+      "pages": [
+        "P07"
+      ],
+      "modules": [
+        "T01",
+        "T03",
+        "T06",
+        "T07",
+        "T09",
+        "T10"
+      ],
+      "prd_section": "7.7",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F36"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F37",
+      "text": "播放器失败可重新获取受控资源或下载预览，不丢项目。",
+      "text_sha256": "e6c3769f5a2a93d296129ef867f39d2f22beec0b610662096e3225c833db256a",
+      "pages": [
+        "P07"
+      ],
+      "modules": [
+        "T01",
+        "T03",
+        "T06",
+        "T07",
+        "T09",
+        "T10"
+      ],
+      "prd_section": "7.7",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F37"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F38",
+      "text": "只有成功渲染版本能导出，文件尺寸与 MIME 类型通过校验。",
+      "text_sha256": "9e24484807592518d5b13d8070e902bbacd60d050520e43dcb93c5747bf966cb",
+      "pages": [
+        "P08"
+      ],
+      "modules": [
+        "T01",
+        "T02",
+        "T08",
+        "T09",
+        "T10"
+      ],
+      "prd_section": "7.8",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F38"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F39",
+      "text": "SRT 时码无负值、字幕不越界，来源引用无失效 ID。",
+      "text_sha256": "df4c56596305d605dd2cd8aacd9fbc8f3b85d2d0f79af7dd675c93e183f2c0ad",
+      "pages": [
+        "P08"
+      ],
+      "modules": [
+        "T01",
+        "T02",
+        "T08",
+        "T09",
+        "T10"
+      ],
+      "prd_section": "7.8",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F39"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F40",
+      "text": "重复下载不触发媒体重生成。",
+      "text_sha256": "a963534c3f1d124caf8a3089e8143216f223a57a66fad7b5762f0919c46cd976",
+      "pages": [
+        "P08"
+      ],
+      "modules": [
+        "T01",
+        "T02",
+        "T08",
+        "T09",
+        "T10"
+      ],
+      "prd_section": "7.8",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F40"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F41",
+      "text": "导出失败可重打包，复用已生成资产。",
+      "text_sha256": "ec71e5c00abe1d5008406c385e27a30f8e46643d5f1c63f05ff9f531db6b9077",
+      "pages": [
+        "P08"
+      ],
+      "modules": [
+        "T01",
+        "T02",
+        "T08",
+        "T09",
+        "T10"
+      ],
+      "prd_section": "7.8",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F41"
+      ],
+      "implementation_status": "design_only"
+    },
+    {
+      "id": "F42",
+      "text": "开始下一条只继承长期偏好，不默认复用本条材料与临时覆盖。",
+      "text_sha256": "67c3f5d2ff4108fc5eb5defe41f23df37cd519ee010f5623bd31e96c1be4cc3e",
+      "pages": [
+        "P08"
+      ],
+      "modules": [
+        "T01",
+        "T02",
+        "T08",
+        "T09",
+        "T10"
+      ],
+      "prd_section": "7.8",
+      "technical_spec": "拾史桌面端v1.0技术规格说明书.md",
+      "acceptance": [
+        "AC-F42"
+      ],
+      "implementation_status": "design_only"
+    }
+  ],
+  "review_scope": "Design mapping only; runtime acceptance not performed"
+}

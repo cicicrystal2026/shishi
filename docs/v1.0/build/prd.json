@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "sources": {
+    "拾史桌面端V1_PRD.md": "e40f04b36ae02c57cc23231b607c40f1004de247afa6d5b6c5287f35c19e1742",
+    "tools/build_prd.py": "977b8cd4cf14ef78a93d2fa546882de23796c47e2c4a2f5fc9640bec2f0d4b16"
+  },
+  "outputs": {
+    "拾史桌面端V1_PRD.docx": "3faa802ea92ae21b7c87344cf82c8d7fd7e1130edc6c1b9b0db228c9989204f4"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "sources": {
+    "拾史桌面端v1.0技术规格说明书.md": "32480841b89b41c36c1ff4c2f9a37c89f58b5c614a28f9c1a8c1b772160ece1e",
+    "tools/build_technical_spec.py": "8d9f820aeee43538733ae8009fd20bc56d24b02da5239d07b648c90f6854d333",
+    "技术架构/技术架构图_v1.0.png": "e6e43ce4f651a1d51c97b3767da3d7a22317898fee17f1abdc199d8222c033eb",
+    "VERSION": "5717e7c840171019a4eeab5b79a7f894a4986eaff93d04ec5b12c9a189f594bf"
+  },
+  "outputs": {
+    "拾史桌面端v1.0技术规格说明书.docx": "45d05eae52d1a904cc89f79558cd4ec724e0aa54043a8fc75de05399c7c8deb3"
+  }
+}

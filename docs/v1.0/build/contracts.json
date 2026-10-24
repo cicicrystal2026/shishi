@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "sources": {
+    "tools/build_contracts.py": "a6b0c7ba8af3924613b9d2955a677be596254b09f93e8203d4aa55af9a8df62d",
+    "拾史桌面端V1_PRD.md": "e40f04b36ae02c57cc23231b607c40f1004de247afa6d5b6c5287f35c19e1742",
+    "VERSION": "5717e7c840171019a4eeab5b79a7f894a4986eaff93d04ec5b12c9a189f594bf"
+  },
+  "outputs": {
+    "contracts/core.schema.json": "ac571c82d34d1ebf10a32734c02f9681a22296fe6407f2fb5ecf2bf4b1ee2aab",
+    "contracts/openapi.json": "a1eb3e4c4d5c51cd28e4328e67a990fa80362027ef592fb67d70110b3a518662",
+    "需求追踪.json": "474ff198f641fde7a25efbe672310033c2c14bb231edb111541c3ccb668ddbe4"
+  }
+}

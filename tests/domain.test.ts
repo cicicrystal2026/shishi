@@ -1,0 +1,11 @@
+import{test}from'node:test';import assert from'node:assert/strict';import{budgetAvailable,validateScript,affected,srtTime,hash}from'../packages/domain.ts';
+test('unset and zero budgets cannot authorize paid calls',()=>{assert.equal(budgetAvailable(null,0,0,1),false);assert.equal(budgetAvailable(0,0,0,1),false)});
+test('in-flight reservations prevent overspending',()=>{assert.equal(budgetAvailable(100,40,50,11),false);assert.equal(budgetAvailable(100,40,50,10),true)});
+test('negative and zero reservation rejected',()=>{assert.equal(budgetAvailable(100,0,0,-1),false);assert.equal(budgetAvailable(100,0,0,0),false)});
+test('invalid source IDs rejected',()=>{assert.throws(()=>validateScript({title:'x',paragraphs:[{text:'a',sourceSpanIds:['invented']}]},['real']),/来源/)});
+test('valid cited script passes',()=>{const r=validateScript({title:'x',paragraphs:[{text:'a',sourceSpanIds:['real']}]},['real']);assert.equal(r.paragraphs[0].sourceSpanIds[0],'real')});
+test('empty script cannot be approved',()=>{assert.throws(()=>validateScript({title:'x',paragraphs:[]},[]))});
+test('subtitle change does not invalidate image assets',()=>{assert.deepEqual(affected('subtitle'),['timeline','render'])});
+test('voice change invalidates timing',()=>{assert.ok(affected('narration').includes('timing'))});
+test('SRT time uses integer milliseconds',()=>{assert.equal(srtTime(61523),'00:01:01,523')});
+test('input digest stable and sensitive to change',()=>{assert.equal(hash('a'),hash('a'));assert.notEqual(hash('a'),hash('b'))});

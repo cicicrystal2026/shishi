@@ -1,0 +1,449 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:shishi:core:1",
+  "title": "Shishi v1.0 stage contracts",
+  "version": "1.0",
+  "$defs": {
+    "SourceRef": {
+      "type": "object",
+      "properties": {
+        "spanId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "pageId": {
+          "type": "string",
+          "format": "uuid"
+        }
+      },
+      "required": [
+        "spanId",
+        "pageId"
+      ],
+      "additionalProperties": false
+    },
+    "Claim": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "kind": {
+          "enum": [
+            "fact",
+            "author_view",
+            "creative",
+            "general"
+          ]
+        },
+        "status": {
+          "enum": [
+            "pending",
+            "verified",
+            "disputed",
+            "excluded"
+          ]
+        },
+        "statement": {
+          "type": "string"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "status",
+        "statement",
+        "sources"
+      ],
+      "additionalProperties": false
+    },
+    "Paragraph": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claimIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "sourceSpanIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "text",
+        "claimIds",
+        "sourceSpanIds"
+      ],
+      "additionalProperties": false
+    },
+    "Script": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "title": {
+          "type": "string"
+        },
+        "coreMessage": {
+          "type": "string"
+        },
+        "paragraphs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/Paragraph"
+          }
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "title",
+        "coreMessage",
+        "paragraphs"
+      ],
+      "additionalProperties": false
+    },
+    "Shot": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "shotKey": {
+          "type": "string"
+        },
+        "paragraphIds": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "intent": {
+          "type": "string"
+        },
+        "imagePrompt": {
+          "type": "string"
+        },
+        "referenceAssetIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "startFrame": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "durationFrames": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "id",
+        "shotKey",
+        "paragraphIds",
+        "intent",
+        "imagePrompt",
+        "referenceAssetIds",
+        "startFrame",
+        "durationFrames"
+      ],
+      "additionalProperties": false
+    },
+    "Job": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "status": {
+          "enum": [
+            "queued",
+            "leased",
+            "submitting",
+            "submitted",
+            "running",
+            "unknown",
+            "cancel_requested",
+            "succeeded",
+            "failed",
+            "cancelled"
+          ]
+        },
+        "attempt": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "providerTaskId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "inputHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "id",
+        "status",
+        "attempt",
+        "providerTaskId",
+        "inputHash"
+      ],
+      "additionalProperties": false
+    },
+    "TimelineClip": {
+      "type": "object",
+      "properties": {
+        "shotId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "assetId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "startFrame": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "durationFrames": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "shotId",
+        "assetId",
+        "startFrame",
+        "durationFrames"
+      ],
+      "additionalProperties": false
+    },
+    "Subtitle": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "startMs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "endMs": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "text",
+        "startMs",
+        "endMs"
+      ],
+      "additionalProperties": false
+    },
+    "Timeline": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "fps": {
+          "const": 30
+        },
+        "width": {
+          "enum": [
+            1080,
+            1920
+          ]
+        },
+        "height": {
+          "enum": [
+            1080,
+            1920
+          ]
+        },
+        "clips": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/TimelineClip"
+          }
+        },
+        "subtitles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Subtitle"
+          }
+        },
+        "narrationAssetId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "musicAssetId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "fps",
+        "width",
+        "height",
+        "clips",
+        "subtitles",
+        "narrationAssetId",
+        "musicAssetId"
+      ],
+      "additionalProperties": false
+    },
+    "ChangePlan": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "operations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "op": {
+                "enum": [
+                  "update_subtitle_style",
+                  "adjust_audio_gain",
+                  "change_pacing",
+                  "replace_asset",
+                  "rewrite_narration",
+                  "revise_claim",
+                  "regenerate_image",
+                  "regenerate_clip"
+                ]
+              },
+              "targetRefs": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "parameters": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "op",
+              "targetRefs",
+              "parameters"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "requiresClarification": {
+          "type": "boolean"
+        },
+        "estimatedCostMicros": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "operations",
+        "requiresClarification",
+        "estimatedCostMicros"
+      ],
+      "additionalProperties": false
+    },
+    "Preference": {
+      "type": "object",
+      "properties": {
+        "audience": {
+          "type": "string"
+        },
+        "durationMinSec": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "durationMaxSec": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "visualStyle": {
+          "type": "string"
+        },
+        "tone": {
+          "type": "string"
+        },
+        "voiceStyle": {
+          "type": "string"
+        },
+        "reviewStory": {
+          "type": "boolean"
+        },
+        "budgetMicros": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "currency": {
+          "enum": [
+            "CNY",
+            "USD"
+          ]
+        }
+      },
+      "required": [
+        "audience",
+        "durationMinSec",
+        "durationMaxSec",
+        "visualStyle",
+        "tone",
+        "voiceStyle",
+        "reviewStory",
+        "budgetMicros",
+        "currency"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

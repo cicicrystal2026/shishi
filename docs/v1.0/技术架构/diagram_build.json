@@ -1,0 +1,6 @@
+{
+  "version": "1.0",
+  "source": "技术架构/architecture.json",
+  "source_sha256": "e584f75fd697e2279d3a5a5b474c092df1a99924f7800c91886ea799c193a83d",
+  "generator": "tools/render_architecture.py"
+}
