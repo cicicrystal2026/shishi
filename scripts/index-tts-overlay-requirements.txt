@@ -1,0 +1,9 @@
+sentencepiece==0.2.1
+fugashi==1.5.2
+unidic-lite==1.0.8
+transformers==4.52.1
+tokenizers==0.21.0
+modelscope==1.27.0
+wetext==0.1.0
+accelerate==1.8.1
+munch==4.0.0
