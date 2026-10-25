@@ -32,7 +32,7 @@ def make_server(engine, reference, cache, port=9880, version='2.5'):
             if self.path != '/health':
                 return self.send_json(404, {'error': 'NOT_FOUND'})
             return self.send_json(200, {'service': 'shishi-index-tts', 'ready': True,
-                                       'model': 'IndexTTS-' + version,
+                                       'model': 'IndexTTS-' + version, 'speechStyles': ['calm', 'reference'],
                                        'referenceReady': bool(reference and Path(reference).is_file())})
 
         def do_POST(self):
@@ -52,6 +52,9 @@ def make_server(engine, reference, cache, port=9880, version='2.5'):
                 speed = float(data.get('duration_factor', 1))
                 if not 0.5 <= speed <= 2:
                     return self.send_json(400, {'error': 'INVALID_SPEED'})
+                style = data.get('speech_style', 'reference')
+                if style not in ('calm', 'reference'):
+                    return self.send_json(400, {'error': 'INVALID_STYLE'})
                 raw = data.get('reference_audio')
                 audio = base64.b64decode(raw, validate=True) if raw else None
                 if audio and (len(audio) > 8 * 1024 * 1024 or audio[:4] != b'RIFF' or audio[8:12] != b'WAVE'):
@@ -59,7 +62,7 @@ def make_server(engine, reference, cache, port=9880, version='2.5'):
                 if not audio and not (reference and Path(reference).is_file()):
                     return self.send_json(400, {'error': 'REFERENCE_REQUIRED'})
                 refhash = hashlib.sha256(audio if audio else Path(reference).read_bytes()).hexdigest()
-                digest = hashlib.sha256(json.dumps([text, speed, refhash, version], ensure_ascii=False).encode()).hexdigest()
+                digest = hashlib.sha256(json.dumps([text, speed, refhash, version, 'speech-style-v1', style], ensure_ascii=False).encode()).hexdigest()
                 target = cache / (digest + '.wav')
                 with lock:
                     if not target.exists():
@@ -72,6 +75,9 @@ def make_server(engine, reference, cache, port=9880, version='2.5'):
                             kwargs = dict(spk_audio_prompt=str(source), text=text, output_path=output, verbose=False)
                             if version == '2.5':
                                 kwargs.update(lang='ZH', duration_factor=speed)
+                            if style == 'calm':
+                                # Official vector order: happy, angry, sad, afraid, disgusted, melancholic, surprised, calm.
+                                kwargs.update(emo_vector=[0, 0, 0, 0, 0, 0, 0, 0.8], emo_alpha=1.0, use_random=False)
                             engine.infer(**kwargs)
                             result = Path(output).read_bytes()
                             if result[:4] != b'RIFF' or result[8:12] != b'WAVE':
