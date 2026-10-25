@@ -21,7 +21,7 @@
 - 桥接代码 scripts/index_tts_bridge.py，默认仅绑定127.0.0.1:9880；应用仅允许HTTP loopback地址，不允许远程域名、URL凭证、重定向或任意路径。
 - GET /health 返回 service=shishi-index-tts、ready、model、referenceReady。
 - POST /v1/audio/speech 输入 input（最多3000字）、reference_audio（可选base64 WAV）、duration_factor（0.5–2.0）；返回 audio/wav。无自定义参考声音时使用官方演示参考文件。
-- 桥接服务使用官方 Python IndexTTS2.5.infer 接口，普通话ZH；关闭首次部署不需要的CUDA自定义编译、DeepSpeed、Qwen文本情绪模块。串行推理，文本/参考声音摘要/参数/模型版本构成缓存键；拒绝浏览器跨站Origin调用，不记录旁白正文或参考声音内容。
+- 桥接服务使用官方 Python IndexTTS2.5.infer 接口，普通话ZH；关闭首次部署不需要的CUDA自定义编译、DeepSpeed、Qwen文本情绪模块。串行推理，文本/参考声音摘要/参数/模型版本构成缓存键；拒绝浏览器跨站Origin调用，HTTP访问日志不记录请求正文或参考音频；上游推理器会在本机stdout日志输出归一化文本，日志不进入Git。
 - 应用合成前做服务预检；离线时直接阻塞，不生成未知请求。实际请求中断时保留unknown，禁止盲目重试。成功WAV经ffprobe验证时长后存为audio资产并记录本机provider_calls；缓存返回同一资产。文件进入现有分镜试听、剪辑、字幕、MP4/SRT/ZIP链路。
 
 ## 部署与依赖
@@ -34,7 +34,7 @@
 
 ## 验证状态
 
-已通过46项Node全量测试、3项Python桥接服务模拟测试，以及类型检查/前端构建。设置页1280/1440/1920宽度、参考声音上传归一化、服务检测和真实Seedream首图显示检查通过。实际IndexTTS2.5模块已成功导入，CUDA可用；模型权重下载及真实合成仍在进行，不能将模拟引擎输出当成IndexTTS真实质量证明。
+已通过46项Node全量测试、3项Python桥接服务模拟测试，以及类型检查/前端构建。设置页1280/1440/1920宽度、参考声音上传归一化、服务检测和真实Seedream首图显示检查通过。核心及辅助模型权重已完成下载与发布方摘要校验，CUDA可用。实际IndexTTS2.5首段旁白合成成功：WAV时长10.49542秒，首次请求18.219秒，保存到首分镜，音频资产91fa73e0-6e6a-4a14-aba2-60a20b15bf9a。此为单段链路验证，听感与读音仍由用户验收。参考声音为官方演示voice_01，非用户个人音色。此次本机调用没有新增云端API费用或预算占用；任务保持暂停。
 
 Seedream首张真实生图已成功，保存为首镜头图片并暂停任务，未生成其余图片或云端配音。画面中的马纹未准确呈现衔杯细节，只作为接口和显示链路验证；文物形制与纹样仍需实物参考图及人工审阅。
 
@@ -43,3 +43,7 @@ Seedream首张真实生图已成功，保存为首镜头图片并暂停任务，
 - https://huggingface.co/IndexTeam/IndexTTS-2.5 （核心模型）
 - https://modelscope.cn/models/IndexTeam/IndexTTS-2.5 （官方列出的国内模型源）
 - https://github.com/index-tts/index-tts/blob/main/indextts/infer_v2_5.py （推理初始化及参数）
+
+运行兼容修复：隔离层补齐descript-audiotools及依赖，Python3.10使用IPython8.37.0；桥接进程为GPT2InferenceModel显式混入GenerationMixin，适配Transformers4.52.1。固定版本见overlay requirements，不修改上游源文件或原有AI环境。
+
+最终回归：46项Node测试及3项Python桥接测试通过，类型检查和构建通过；桌面10页回归无运行错误，冻结设计检查通过（42需求/57文件）。真实音频在分镜「旁白与声音」页签已验证元数据、播放推进及暂停。证据qa/index-tts-real-audio.json、qa/index-tts.json、qa/screens/index-tts-real-shot.png保留本机，不提交用户素材。

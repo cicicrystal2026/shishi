@@ -108,6 +108,14 @@ def main():
         parser.error('Model config or reference audio missing; download resources before starting.')
     os.chdir(repo)
     sys.path.insert(0, str(repo))
+    # Transformers 4.50+ no longer mixes generation methods into the GPT2 base.
+    # Apply the upstream warning's narrow compatibility remedy in this process only.
+    from indextts.gpt import model_v2
+    from transformers.generation import GenerationMixin
+    if not issubclass(model_v2.GPT2InferenceModel, GenerationMixin):
+        class ShishiGPT2InferenceModel(model_v2.GPT2InferenceModel, GenerationMixin):
+            pass
+        model_v2.GPT2InferenceModel = ShishiGPT2InferenceModel
     if args.version == '2.5':
         from indextts.infer_v2_5 import IndexTTS2
         engine = IndexTTS2(cfg_path=str(models / 'config.yaml'), model_dir=str(models), use_bf16=True, use_cuda_kernel=False, use_deepspeed=False, use_qwen_emo=False)
