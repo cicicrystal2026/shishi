@@ -1,10 +1,11 @@
 {
   "name": "heritage-video",
-  "version": "2026-10-21",
-  "role": "手动制作方法与验收规范；原自动编剧路径尚未替换",
+  "version": "2026-10-26",
+  "role": "人物与文物故事、镜头去重、手动制作交付与验收规范；原自动编剧路径尚未替换",
+  "hashEncoding": "UTF-8, LF newlines",
   "files": {
     "SKILL.md": {
-      "sha256": "2fbb064740ae6053e0cd3c552006fd913bb3182786210b59063366074ebd1bbc"
+      "sha256": "d1320c718b41d53c4594c683bf47ff511c530e5b6e958985f05ab1579a67c31e"
     },
     "references/audio-and-delivery.md": {
       "sha256": "daad273fa79fdf5a35c4a7047261057cd93490ec1d4b5f1759cdb9b9a592ecac"
@@ -13,16 +14,16 @@
       "sha256": "2082761d77161473de0634b87e2a76da95c7d3699d5a986175235563ed71b072"
     },
     "references/cultural-production-pipeline.md": {
-      "sha256": "bb64264b03c7773efb43e7d8f389e6bcbb9d5c8d7c60266a8dee43621dcc3362"
+      "sha256": "677aa8a64a9ce3f41397a7b38e4527343b53fbbff15bf4b900091d7c03562bca"
     },
     "references/history-suspense.md": {
-      "sha256": "34b9803a65a43418e41facfe71c9b233e0601d18d84f477b44867b7662b1170d"
+      "sha256": "80524eebb3482b84720abf232aead208aecd006027085e21a02ff3bf928193f2"
     },
     "references/motion-handoff.md": {
-      "sha256": "fcff021f0b15b381c53671eb908f776ca2376fb6413c16eff85c1f73996c2730"
+      "sha256": "f1e4061686fdf8ca2154c9b50e0ce813cf3e3681d9826eb0964b1cf02ab15fa0"
     },
     "references/production.md": {
-      "sha256": "5857d0d79451db05b89a8aa1616a91d4f5b3c8f313f36c074f3ad8d725f1df78"
+      "sha256": "3ee78ea80b25785bfaf7f97789f26fdf1201cc666642288d57cbd941a2aafbce"
     }
   }
 }
